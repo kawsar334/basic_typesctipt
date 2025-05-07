@@ -88,8 +88,33 @@ if(typeof value === "number"){
     throw new Error("Invalid input type");
 }
 
-console.log(processValue("hello")); 
-console.log(processValue(10));      
+// console.log(processValue("hello")); 
+// console.log(processValue(10));      
 // ============================Problem 6:========================================
+
+interface Product {
+    name: string;
+    price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null{
+   if(products.length===0) return null
+   let large= products[0];
+   for(let i=0; i<products.length; i++){
+        if(large.price<products[i].price){
+            large = products[i];
+        }
+   }
+   return large;
+
+}
+const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+];
+
+console.log(getMostExpensiveProduct(products))
+
 // ============================Problem 7:========================================
 // ============================Problem 8:========================================
