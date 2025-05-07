@@ -3,18 +3,18 @@
 
 
 // ============================Problem 1:========================================
-function formatString(input: string, toUpper?: boolean): string{
-    if(toUpper){
-        return input.toUpperCase();
-    }else{
-        return input.toLowerCase() 
-    }
-
-
+function formatString(input: string, toUpper: boolean =true ): string{
+    // if(toUpper){
+    //     return input.toUpperCase();
+    // }else{
+    //     return input.toLowerCase() 
+    // }
+     return toUpper ? input.toUpperCase() : input.toLowerCase();
+//    return toUpper ? input.toUpperCase() : input.toLowerCase()
 }
-// console.log(formatString("Hello"));          
-// console.log(formatString("Hello", true));   
-// console.log(formatString("Hello", false)); 
+console.log(formatString("Hello"));          
+console.log(formatString("Hello", true));   
+console.log(formatString("Hello", false)); 
 
 // ============================Problem 2:========================================
 
