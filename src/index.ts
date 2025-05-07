@@ -74,10 +74,22 @@ class Car extends Vehicle{
     }
 }
 
-const myCar = new Car("Toyota", 2020, "Corolla");
-myCar.getInfo();  
-myCar.getModel();  
+// const myCar = new Car("Toyota", 2020, "Corolla");
+// myCar.getInfo();  
+// myCar.getModel();  
 // ============================Problem 5:========================================
+
+function processValue(value: string | number): number {
+if(typeof value === "number"){
+    return value*2
+}else if(typeof value === "string"){
+    return value.length
+}
+    throw new Error("Invalid input type");
+}
+
+console.log(processValue("hello")); 
+console.log(processValue(10));      
 // ============================Problem 6:========================================
 // ============================Problem 7:========================================
 // ============================Problem 8:========================================
