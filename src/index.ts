@@ -56,6 +56,10 @@ class Vehicle{
         this.year=year
 
     }
+
+    getInfo(){
+        console.log(`Make:${this.make}, Year:${this.year}`)
+    }
 }
 
 
@@ -65,7 +69,14 @@ class Car extends Vehicle{
         super(make, year);
         this.model=model
     }
+    getModel(){
+        console.log(`Model:${this.model}`)
+    }
 }
+
+const myCar = new Car("Toyota", 2020, "Corolla");
+myCar.getInfo();  
+myCar.getModel();  
 // ============================Problem 5:========================================
 // ============================Problem 6:========================================
 // ============================Problem 7:========================================
