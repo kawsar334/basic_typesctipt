@@ -12,9 +12,9 @@ function formatString(input: string, toUpper?: boolean): string{
 
 
 }
-// console.log(formatString("Hello"));          // Output: "HELLO"
-// console.log(formatString("Hello", true));   // Output: "HELLO"
-// console.log(formatString("Hello", false));  // Output: "hello"
+// console.log(formatString("Hello"));          
+// console.log(formatString("Hello", true));   
+// console.log(formatString("Hello", false)); 
 
 // ============================Problem 2:========================================
 
@@ -130,6 +130,22 @@ enum Day {
 function getDayType(day: Day): string{
    return (day === Day.Saturday || day === Day.Sunday) ? "Weekend" : "Weekday"
 }
-console.log(getDayType(Day.Monday));   
-console.log(getDayType(Day.Sunday)); 
+// console.log(getDayType(Day.Monday));   
+// console.log(getDayType(Day.Sunday)); 
 // ============================Problem 8:========================================
+async function squareAsync(n: number): Promise<number>{
+    const result: Promise<number>= new Promise((resolve, reject)=>{
+        if(n<0){
+            reject(new Error("Negative number not allowed")) 
+        }else{
+            setTimeout(() => {
+                resolve(n * n)
+            }, 1000);
+        }
+    });
+    return result
+    
+}
+
+squareAsync(4).then(console.log);        
+squareAsync(-3).catch(console.error);   
