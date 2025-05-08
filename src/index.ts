@@ -1,22 +1,24 @@
 
-// https://github.com/Apollo-Level2-Web-Dev/batch-4-be-a-typescript-technocrat/blob/main/practice_probelms.md
 
 
-// ============================Problem 1:========================================
-function formatString(input: string, toUpper: boolean =true ): string{
-    // if(toUpper){
-    //     return input.toUpperCase();
-    // }else{
-    //     return input.toLowerCase() 
-    // }
-     return toUpper ? input.toUpperCase() : input.toLowerCase();
+function formatString(input: string, toUpper?: boolean ): string{
+    if (toUpper === true) {
+        return input.toUpperCase();
+    } else if (toUpper === false) {
+        return input.toLocaleLowerCase();
+    } else {
+        return input.toUpperCase();
+    }
 //    return toUpper ? input.toUpperCase() : input.toLowerCase()
 }
 console.log(formatString("Hello"));          
 console.log(formatString("Hello", true));   
 console.log(formatString("Hello", false)); 
 
-// ============================Problem 2:========================================
+
+
+
+
 
 function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[]{
     const filterArray= items.filter((item)=>item?.rating>=4)
@@ -29,9 +31,12 @@ const books = [
 ];
 
 
-// console.log(filterByRating(books))
+console.log(filterByRating(books));
 
-// ============================Problem 3:============ generic function that concatenates multiple arrays of the same type using rest parameters=======================================
+
+
+
+
 function concatenateArrays<T>(...arrays: T[][]): T[]{
     let result :T[]=[];
     for(let i =0; i<arrays.length; i++){
@@ -44,9 +49,11 @@ function concatenateArrays<T>(...arrays: T[][]): T[]{
     }
     return result;
 }
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
-// console.log(concatenateArrays(["a", "b"], ["c"]))
-// ============================Problem 4:========================================
+console.log(concatenateArrays([1, 2], [3, 4], [5]));
+console.log(concatenateArrays(["a", "b"], ["c"]))
+
+
+
 
 class Vehicle{
     private make:string;
@@ -74,10 +81,12 @@ class Car extends Vehicle{
     }
 }
 
-// const myCar = new Car("Toyota", 2020, "Corolla");
-// myCar.getInfo();  
-// myCar.getModel();  
-// ============================Problem 5:========================================
+const myCar = new Car("Toyota", 2020, "Corolla");
+myCar.getInfo();  
+myCar.getModel();  
+
+
+
 
 function processValue(value: string | number): number {
 if(typeof value === "number"){
@@ -88,9 +97,10 @@ if(typeof value === "number"){
     throw new Error("Invalid input type");
 }
 
-// console.log(processValue("hello")); 
-// console.log(processValue(10));      
-// ============================Problem 6:========================================
+console.log(processValue("hello")); 
+console.log(processValue(10));     
+
+
 
 interface Product {
     name: string;
@@ -116,7 +126,9 @@ const products = [
 
 console.log(getMostExpensiveProduct(products))
 
-// ============================Problem 7:========================================
+
+
+
 enum Day {
     Monday,
     Tuesday,
@@ -130,9 +142,13 @@ enum Day {
 function getDayType(day: Day): string{
    return (day === Day.Saturday || day === Day.Sunday) ? "Weekend" : "Weekday"
 }
-// console.log(getDayType(Day.Monday));   
-// console.log(getDayType(Day.Sunday)); 
-// ============================Problem 8:========================================
+console.log(getDayType(Day.Monday));   
+console.log(getDayType(Day.Sunday));
+
+
+
+
+
 async function squareAsync(n: number): Promise<number>{
     const result: Promise<number>= new Promise((resolve, reject)=>{
         if(n<0){
@@ -149,3 +165,6 @@ async function squareAsync(n: number): Promise<number>{
 
 squareAsync(4).then(console.log);        
 squareAsync(-3).catch(console.error);   
+
+
+
