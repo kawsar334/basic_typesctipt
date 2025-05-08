@@ -1,6 +1,6 @@
 
 
-
+// 
 function formatString(input: string, toUpper?: boolean ): string{
     if (toUpper === true) {
         return input.toUpperCase();
@@ -18,8 +18,7 @@ console.log(formatString("Hello", false));
 
 
 
-
-
+// 
 function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[]{
     const filterArray= items.filter((item)=>item?.rating>=4)
     return filterArray
@@ -36,7 +35,7 @@ console.log(filterByRating(books));
 
 
 
-
+// 
 function concatenateArrays<T>(...arrays: T[][]): T[]{
     let result :T[]=[];
     for(let i =0; i<arrays.length; i++){
@@ -53,7 +52,7 @@ console.log(concatenateArrays([1, 2], [3, 4], [5]));
 console.log(concatenateArrays(["a", "b"], ["c"]))
 
 
-
+// 
 
 class Vehicle{
     private make:string;
@@ -88,6 +87,10 @@ myCar.getModel();
 
 
 
+
+
+
+// 
 function processValue(value: string | number): number {
 if(typeof value === "number"){
     return value*2
@@ -101,6 +104,11 @@ console.log(processValue("hello"));
 console.log(processValue(10));     
 
 
+
+
+
+
+// 
 
 interface Product {
     name: string;
@@ -129,6 +137,13 @@ console.log(getMostExpensiveProduct(products))
 
 
 
+
+
+
+
+
+// 
+
 enum Day {
     Monday,
     Tuesday,
@@ -148,6 +163,9 @@ console.log(getDayType(Day.Sunday));
 
 
 
+
+
+// 
 
 async function squareAsync(n: number): Promise<number>{
     const result: Promise<number>= new Promise((resolve, reject)=>{
